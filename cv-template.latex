@@ -1,0 +1,70 @@
+\documentclass[10pt, a4paper]{article}
+
+% ── Packages ──────────────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.8cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage{helvet}          % Helvetica (close to the sans-serif original)
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{tabularx}
+
+% ── Colours ───────────────────────────────────────────────────────────────────
+\definecolor{headingblue}{RGB}{31, 73, 125}   % dark navy for section headings
+\definecolor{ruleblue}{RGB}{31, 73, 125}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+
+% ── Hyperlink styling ─────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=headingblue,
+  linkcolor=headingblue
+}
+
+% ── Section heading formatting ────────────────────────────────────────────────
+% H1 → name / top-level (used only for the name)
+\titleformat{\section}
+  {\Large\bfseries\color{headingblue}}
+  {}{0em}{}
+  [\color{ruleblue}\titlerule]
+
+% H2 → major sections (Skills, Experience, etc.)
+\titleformat{\subsection}
+  {\large\bfseries\color{headingblue}}
+  {}{0em}{}
+  [\color{ruleblue}\titlerule]
+
+% H3 → job titles / subsections
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{darkgray}}
+  {}{0em}{}[]
+
+\titlespacing{\section}{0pt}{6pt}{4pt}
+\titlespacing{\subsection}{0pt}{10pt}{4pt}
+\titlespacing{\subsubsection}{0pt}{8pt}{2pt}
+
+% ── List styling ──────────────────────────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.5em,
+  itemsep=1pt,
+  parsep=0pt,
+  topsep=3pt
+}
+
+% ── No page numbers ───────────────────────────────────────────────────────────
+\pagestyle{empty}
+
+% ── Pandoc boilerplate (keeps tight/loose lists etc. working) ─────────────────
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\begin{document}
+$body$
+\end{document}

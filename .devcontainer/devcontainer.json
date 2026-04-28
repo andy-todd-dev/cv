@@ -3,6 +3,16 @@
   "image": "mcr.microsoft.com/devcontainers/base:trixie",
   "features": {
         "ghcr.io/devcontainers-extra/features/pandoc:1": {},
-        "ghcr.io/prulloac/devcontainer-features/latex:1": {}
+        "ghcr.io/prulloac/devcontainer-features/latex:1": {
+          "packages": "iftex,xcolor,titlesec,enumitem,parskip,microtype,helvetic",
+          "mirror": "https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet"
+        }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint"
+      ]
+    }
   }
 }
