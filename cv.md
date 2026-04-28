@@ -25,7 +25,7 @@ TypeScript · React · Next.js · Vite · Tailwind CSS · PWA
 
 ### Mobile
 
-Flutter · Dart · Riverpod · Drift · Kotlin · Jetpack Compose · Hilt
+Flutter · Dart · Riverpod · Drift · Patrol · Kotlin · Jetpack Compose · Hilt
 
 ### Tooling
 
@@ -41,7 +41,7 @@ Stripe · PayPal · WorldPay · UPS · DHL · RevenueCat · Gemini
 
 ### Methodologies
 
-Test Driven Development · Behaviour Driven Development · Domain Driven Design · Event Sourcing / CQRS · Hexagonal Architecture · Continuous Delivery / Integration · Microservices · Functional Programming · Pair Programming · Mob Programming · Agile (Scrum, Kanban)
+Test Driven Development · Behaviour Driven Development · Domain Driven Design · Event Sourcing · CQRS · Hexagonal Architecture · Continuous Delivery / Integration · Microservices · Functional Programming · Pair Programming · Mob Programming · Agile (Scrum, Kanban)
 
 ### AI Development
 
@@ -53,10 +53,11 @@ GitHub Copilot · Copilot Agents
 
 ### Recipe Raven — Founder & Developer \hfill \cvdate{2024 – Present}
 
-- Building a cross-platform recipe app in Flutter (Android) with a Firebase-hosted TypeScript/Python backend API
-- Backend integrates Gemini for parsing Instagram recipes and generating recipe images via API
-- Custom-trained NLP model for ingredient sentence analysis using ingredient-parser-nlp
-- RevenueCat subscription integration; fully functional and approaching commercial launch
+- Sole founder and developer of a commercial cross-platform recipe app (Flutter/Android) with a dual-runtime Firebase backend — TypeScript Cloud Functions for AI/web pipelines, Python for NLP; currently in closed testing ahead of commercial launch via Google Play
+- Engineered a Gemini-powered recipe extraction pipeline handling URLs, Instagram HTML scraping (no official API), images, and OCR; parameterised prompt design with per-field type-safe response parsing to prevent LLM hallucination propagation
+- Implemented production-grade subscription credit metering: Firestore pessimistic locking to prevent race conditions across concurrent requests, idempotent RevenueCat deductions, and immediate UI feedback from backend responses
+- Local-first architecture using Drift (SQLite) with a versioned `importData`/`compileRecipe` schema split, enabling transparent re-parsing of all stored recipes when extraction logic improves; stepwise migrations including in-SQL data transformations
+- CI/CD pipeline with Workload Identity Federation (no stored credentials), automated build versioning via Firebase, and Android keystore injection from secrets
 
 ### The Geek Tech Workshop — Founder & Developer \hfill \cvdate{February 2022 – Present}
 
