@@ -13,32 +13,32 @@ github: https://github.com/andy-todd-dev
 
 ### Kotlin/Java \hfill *3 yrs commercial*
 
-Ktor · Kotest · Exposed · Guice · Javalin · Axon · Gradle · Kestrel
+Ktor · Kotest · Exposed · Axon · Gradle · Coroutines · Koin · Arrow
 
 ### Scala \hfill *8 yrs commercial*
 
-Play · Scalatra · Http4s · Guice · PlayJson · Circe · SBT · Cats
-Specs2 · Mockito · Twirl · Gatling · Slick · ScalaJS · Akka · Akka-Streams
+Http4s · Cats · Cats Effect · Circe · Doobie · Akka · Akka-Streams · SBT · Specs2
 
-### Perl \hfill *7 yrs commercial*
+### Web \hfill *full-stack experience*
 
-Moose · Catalyst · Plack · DBIx::Class · DistZilla · Dancer · Carton
-
-### Web \hfill *13 yrs commercial (sporadic)*
-
-HTML · CSS · Javascript · Typescript · ReactJS · Bootstrap · Material UI · PWA
+TypeScript · React · Next.js · Vite · Tailwind CSS · PWA
 
 ### Tooling
 
-PostgreSQL · MySQL · Git · Github · GCP · Docker · Jenkins · Stash/Bitbucket
-NoSql · AWS · ActiveMQ · Puppet · Splunk · Firebase · Kubernetes · Skaffold
-Terraform · Cucumber · RabbitMQ · Ansible
+Git · GitHub · GitHub Actions · Docker · Kubernetes · Terraform · AWS SAM · Nginx
+PostgreSQL · MongoDB · Redis · Cypress · Cucumber · Grafana · Prometheus
+
+### Cloud & Infrastructure
+
+GCP · AWS · Firebase
+
+### Integrations
+
+Stripe · PayPal · WorldPay · UPS · DHL
 
 ### Methodologies
 
-Test Driven Development · Behaviour Driven Development · Domain Driven Design
-Continuous Delivery / Integration · Service Oriented Architecture · Functional Programming
-Pair Programming · Agile (Scrum, Kanban)
+Test Driven Development · Behaviour Driven Development · Domain Driven Design · Event Sourcing / CQRS · Hexagonal Architecture · Continuous Delivery / Integration · Microservices · Functional Programming · Pair Programming · Mob Programming · Agile (Scrum, Kanban)
 
 :::
 
