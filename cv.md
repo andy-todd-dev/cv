@@ -66,6 +66,10 @@ GitHub Copilot · Copilot Agents
 - Created `bambu-cli`, a Python CLI tool for managing print jobs across Bambu Lab 3D printers; published on PyPI and Docker Hub
 - Developed an Android app (Kotlin/Jetpack Compose) to scan and rewrite RFID tags on Bambu filament spools
 
+```{=latex}
+\newpage
+```
+
 ### Hozah Ltd, London — Software Engineer, Architect, Technical Lead, CTO \hfill \cvdate{March 2019 – February 2022}
 
 - Managing Dev and Support teams at Tech startup
