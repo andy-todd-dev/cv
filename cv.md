@@ -9,26 +9,25 @@ github: https://github.com/andy-todd-dev
 
 ## Skills
 
-::: {.multicols cols="2"}
+::: {.skilltable}
 
-### Kotlin/Java \hfill *3 yrs commercial*
+### Kotlin/Java
 
 Ktor · Kotest · Exposed · Axon · Gradle · Coroutines · Koin · Arrow
 
-### Scala \hfill *8 yrs commercial*
+### Scala
 
 Http4s · Cats · Cats Effect · Circe · Doobie · Akka · Akka-Streams · SBT · Specs2
 
-### Web \hfill *full-stack experience*
+### Web
 
 TypeScript · React · Next.js · Vite · Tailwind CSS · PWA
 
 ### Tooling
 
-Git · GitHub · GitHub Actions · Docker · Kubernetes · Terraform · AWS SAM · Nginx
-PostgreSQL · MongoDB · Redis · Cypress · Cucumber · Grafana · Prometheus
+Git · GitHub · GitHub Actions · Docker · Kubernetes · Terraform · AWS SAM · Nginx · PostgreSQL · MongoDB · Redis · Cypress · Cucumber · Grafana · Prometheus
 
-### Cloud & Infrastructure
+### Platforms
 
 GCP · AWS · Firebase
 

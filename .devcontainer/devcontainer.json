@@ -4,7 +4,7 @@
   "features": {
         "ghcr.io/devcontainers-extra/features/pandoc:1": {},
         "ghcr.io/prulloac/devcontainer-features/latex:1": {
-          "packages": "iftex,xcolor,titlesec,enumitem,parskip,microtype,lato,fontaxes,xkeyval,tools",
+          "packages": "iftex,xcolor,titlesec,enumitem,parskip,microtype,lato,fontaxes,xkeyval,tools,tcolorbox,pgf,environ,trimspaces,tikzfill",
           "mirror": "https://ctan.math.utah.edu/ctan/tex-archive/systems/texlive/tlnet"
         }
   },

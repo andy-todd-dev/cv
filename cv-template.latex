@@ -12,8 +12,9 @@
 \usepackage{parskip}
 \usepackage{microtype}
 \usepackage{array}
-\usepackage{multicol}
 \usepackage{tabularx}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
 
 % ── Colours ───────────────────────────────────────────────────────────────────
 \definecolor{headingblue}{RGB}{0, 105, 105}   % teal for section headings
@@ -48,6 +49,18 @@
   itemsep=1pt,
   parsep=0pt,
   topsep=3pt
+}
+
+% ── Skill tag (pill) styling ──────────────────────────────────
+\newtcbox{\cvtag}{%
+  nobeforeafter,
+  enhanced,
+  arc=3pt,
+  boxrule=0pt,
+  top=0pt, bottom=0pt, left=4pt, right=4pt,
+  colback=headingblue!12,
+  colframe=headingblue!12,
+  fontupper=\scriptsize\color{darkgray}
 }
 
 % ── Date styling (lighter than heading text) ─────────────────────────────────
