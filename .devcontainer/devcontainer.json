@@ -1,0 +1,8 @@
+{
+  "name": "CV builder",
+  "image": "mcr.microsoft.com/devcontainers/base:trixie",
+  "features": {
+        "ghcr.io/devcontainers-extra/features/pandoc:1": {},
+        "ghcr.io/prulloac/devcontainer-features/latex:1": {}
+  }
+}
