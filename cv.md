@@ -37,7 +37,7 @@ GCP · AWS · Firebase
 
 ### Integrations
 
-Stripe · PayPal · WorldPay · UPS · DHL · RevenueCat · Gemini
+Stripe · PayPal · WorldPay · UPS · DHL · RevenueCat · Gemini · eBay · Starling Bank
 
 ### Methodologies
 
@@ -62,7 +62,7 @@ GitHub Copilot · Copilot Agents
 ### The Geek Tech Workshop — Founder & Developer \hfill \cvdate{February 2022 – Present}
 
 - Operated a commercial e-store (sole trader) selling repaired electronics and 3D-printed board game accessories
-- Built a serverless automated accounting pipeline using AWS SAM (Lambda, API Gateway, Google Sheets integration)
+- Built a serverless automated accounting pipeline using AWS SAM (Lambda, API Gateway, Google Sheets) that integrates with eBay and Starling Bank APIs
 - Created `bambu-cli`, a Python CLI tool for managing print jobs across Bambu Lab 3D printers; published on PyPI and Docker Hub
 - Developed an Android app (Kotlin/Jetpack Compose) to scan and rewrite RFID tags on Bambu filament spools
 
