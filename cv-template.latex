@@ -28,12 +28,6 @@
 }
 
 % ── Section heading formatting ────────────────────────────────────────────────
-% H1 → name / top-level (used only for the name)
-\titleformat{\section}
-  {\Large\bfseries\color{headingblue}}
-  {}{0em}{}
-  [\color{ruleblue}\titlerule]
-
 % H2 → major sections (Skills, Experience, etc.)
 \titleformat{\subsection}
   {\large\bfseries\color{headingblue}}
@@ -41,11 +35,10 @@
   [\color{ruleblue}\titlerule]
 
 % H3 → job titles / subsections
-\titleformat{\subsubsection}
+\titleformat{\subsubsection}[block]
   {\normalsize\bfseries\color{darkgray}}
   {}{0em}{}[]
 
-\titlespacing{\section}{0pt}{6pt}{4pt}
 \titlespacing{\subsection}{0pt}{10pt}{4pt}
 \titlespacing{\subsubsection}{0pt}{8pt}{2pt}
 
@@ -65,6 +58,17 @@
   \setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
 
 % ══════════════════════════════════════════════════════════════════════════════
-\begin{document}
-$body$
+\begin{document}$if(name)$
+\noindent\begin{tabularx}{\linewidth}{@{}X r@{}}
+  {\huge\bfseries\color{headingblue} $name$} &
+  \begin{tabular}[t]{@{}r@{}}
+    \small $location$ \\[2pt]
+    \small $phone$ \\[2pt]
+    \small \href{mailto:$email$}{$email$}
+  \end{tabular}
+\end{tabularx}
+\vspace{4pt}
+{\color{ruleblue}\hrule}
+\vspace{8pt}
+$endif$$body$
 \end{document}
