@@ -4,8 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[margin=1.8cm, top=1.5cm, bottom=1.5cm]{geometry}
-\usepackage{helvet}          % Helvetica (close to the sans-serif original)
-\renewcommand{\familydefault}{\sfdefault}
+\usepackage[default]{lato}        % Lato — modern sans-serif
 \usepackage{xcolor}
 \usepackage{titlesec}
 \usepackage{enumitem}
@@ -13,11 +12,12 @@
 \usepackage{parskip}
 \usepackage{microtype}
 \usepackage{array}
+\usepackage{multicol}
 \usepackage{tabularx}
 
 % ── Colours ───────────────────────────────────────────────────────────────────
-\definecolor{headingblue}{RGB}{31, 73, 125}   % dark navy for section headings
-\definecolor{ruleblue}{RGB}{31, 73, 125}
+\definecolor{headingblue}{RGB}{0, 105, 105}   % teal for section headings
+\definecolor{ruleblue}{RGB}{0, 105, 105}
 \definecolor{darkgray}{RGB}{60, 60, 60}
 
 % ── Hyperlink styling ─────────────────────────────────────────────────────────
@@ -50,6 +50,9 @@
   topsep=3pt
 }
 
+% ── Date styling (lighter than heading text) ─────────────────────────────────
+\newcommand{\cvdate}[1]{{\small\mdseries\color{darkgray}#1}}
+
 % ── No page numbers ───────────────────────────────────────────────────────────
 \pagestyle{empty}
 
@@ -64,7 +67,9 @@
   \begin{tabular}[t]{@{}r@{}}
     \small $location$ \\[2pt]
     \small $phone$ \\[2pt]
-    \small \href{mailto:$email$}{$email$}
+    \small \href{mailto:$email$}{$email$}$if(linkedin)$ \\[2pt]
+    \small \href{$linkedin$}{linkedin.com/in/andrew-todd-81a61766}$endif$$if(github)$ \\[2pt]
+    \small \href{$github$}{github.com/andy-todd-dev}$endif$
   \end{tabular}
 \end{tabularx}
 \vspace{4pt}

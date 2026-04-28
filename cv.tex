@@ -1,0 +1,239 @@
+\documentclass[10pt, a4paper]{article}
+
+% ── Packages ──────────────────────────────────────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.8cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[default]{lato}        % Lato — modern sans-serif
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{tabularx}
+
+% ── Colours ───────────────────────────────────────────────────────────────────
+\definecolor{headingblue}{RGB}{0, 105, 105}   % teal for section headings
+\definecolor{ruleblue}{RGB}{0, 105, 105}
+\definecolor{darkgray}{RGB}{60, 60, 60}
+
+% ── Hyperlink styling ─────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  urlcolor=headingblue,
+  linkcolor=headingblue
+}
+
+% ── Section heading formatting ────────────────────────────────────────────────
+% H2 → major sections (Skills, Experience, etc.)
+\titleformat{\subsection}
+  {\large\bfseries\color{headingblue}}
+  {}{0em}{}
+  [\color{ruleblue}\titlerule]
+
+% H3 → job titles / subsections
+\titleformat{\subsubsection}[block]
+  {\normalsize\bfseries\color{darkgray}}
+  {}{0em}{}[]
+
+\titlespacing{\subsection}{0pt}{10pt}{4pt}
+\titlespacing{\subsubsection}{0pt}{8pt}{2pt}
+
+% ── List styling ──────────────────────────────────────────────────────────────
+\setlist[itemize]{
+  leftmargin=1.5em,
+  itemsep=1pt,
+  parsep=0pt,
+  topsep=3pt
+}
+
+% ── Date styling (lighter than heading text) ─────────────────────────────────
+\newcommand{\cvdate}[1]{{\small\mdseries\color{darkgray}#1}}
+
+% ── No page numbers ───────────────────────────────────────────────────────────
+\pagestyle{empty}
+
+% ── Pandoc boilerplate (keeps tight/loose lists etc. working) ─────────────────
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{1pt}\setlength{\parskip}{0pt}}
+
+% ══════════════════════════════════════════════════════════════════════════════
+\begin{document}\noindent\begin{tabularx}{\linewidth}{@{}X r@{}}
+  {\huge\bfseries\color{headingblue} Andrew Todd} &
+  \begin{tabular}[t]{@{}r@{}}
+    \small Brighton, East Sussex, United Kingdom \\[2pt]
+    \small +44770 953 9459 \\[2pt]
+    \small \href{mailto:email.andy.todd@gmail.com}{email.andy.todd@gmail.com} \\[2pt]
+    \small \href{https://www.linkedin.com/in/andrew-todd-81a61766/}{linkedin.com/in/andrew-todd-81a61766} \\[2pt]
+    \small \href{https://github.com/andy-todd-dev}{github.com/andy-todd-dev}
+  \end{tabular}
+\end{tabularx}
+\vspace{4pt}
+{\color{ruleblue}\hrule}
+\vspace{8pt}
+\subsection{Skills}\label{skills}
+
+\begin{multicols}{2}
+
+### Kotlin/Java \hfill *3 yrs commercial*
+
+Ktor · Kotest · Exposed · Guice · Javalin · Axon · Gradle · Kestrel
+
+### Scala \hfill *8 yrs commercial*
+
+Play · Scalatra · Http4s · Guice · PlayJson · Circe · SBT · Cats
+Specs2 · Mockito · Twirl · Gatling · Slick · ScalaJS · Akka · Akka-Streams
+
+### Perl \hfill *7 yrs commercial*
+
+Moose · Catalyst · Plack · DBIx::Class · DistZilla · Dancer · Carton
+
+### Web \hfill *13 yrs commercial (sporadic)*
+
+HTML · CSS · Javascript · Typescript · ReactJS · Bootstrap · Material UI · PWA
+
+### Tooling
+
+PostgreSQL · MySQL · Git · Github · GCP · Docker · Jenkins · Stash/Bitbucket
+NoSql · AWS · ActiveMQ · Puppet · Splunk · Firebase · Kubernetes · Skaffold
+Terraform · Cucumber · RabbitMQ · Ansible
+
+### Methodologies
+
+Test Driven Development · Behaviour Driven Development · Domain Driven Design
+Continuous Delivery / Integration · Service Oriented Architecture · Functional Programming
+Pair Programming · Agile (Scrum, Kanban)
+
+\end{multicols}
+
+\subsection{Experience}\label{experience}
+
+\subsubsection{\texorpdfstring{Hozah Ltd, London --- Software Engineer,
+Architect, Technical Lead, CTO
+\hfill \cvdate{March 2019 – February 2022}}{Hozah Ltd, London --- Software Engineer, Architect, Technical Lead, CTO }}\label{hozah-ltd-london-software-engineer-architect-technical-lead-cto}
+
+\begin{itemize}
+\tightlist
+\item
+  Managing Dev and Support teams at Tech startup
+\item
+  Technical leadership for architecting, maintenance and development of
+  existing and new software solutions within Hozah: a Smart Parking and
+  Payment Solutions company
+\item
+  Solutions built using Kotlin, Scala and JavaScript (React).
+  Infrastructure hosted primarily with Google Cloud Platform
+\item
+  Systems and architecture made heavy use of Domain Driven Design, event
+  based communication, and event sourcing
+\item
+  Guided Dev team to more productive processes and tooling through
+  discussion, feedback and presentation
+\item
+  Migrated team to Infrastructure As Code approach
+\item
+  Mentoring of junior developers with Pair and Mob programming and code
+  review
+\end{itemize}
+
+\subsubsection{\texorpdfstring{Dice Technology Ltd, London --- Backend
+Developer
+\hfill \cvdate{September 2018 – March 2019}}{Dice Technology Ltd, London --- Backend Developer }}\label{dice-technology-ltd-london-backend-developer}
+
+\begin{itemize}
+\tightlist
+\item
+  Building very low latency microservices. Streaming data from sporting
+  events to clients using akka-streams
+\item
+  Infrastructure / deployment flow built and maintained by the Dev team
+  (in AWS)
+\end{itemize}
+
+\subsubsection{\texorpdfstring{Yoox Net-A-Porter, London --- Senior
+Developer
+\hfill \cvdate{May 2014 – September 2018}}{Yoox Net-A-Porter, London --- Senior Developer }}\label{yoox-net-a-porter-london-senior-developer}
+
+\begin{itemize}
+\tightlist
+\item
+  Lead voice in drive to migrate from Perl monolith to Scala implemented
+  Service Oriented Architecture
+\item
+  Creation of Shipping-Option, Shipment-Booking and Document-Generation
+  services, built to high traffic SLAs. Earlier services hosted
+  in-house, later using AWS
+\item
+  Mentoring of graduate / junior developers through Pair Programming,
+  code-review, and team discussion. Also presenting material to rest of
+  company Scala community and / or running more practical workshops
+\end{itemize}
+
+\subsubsection{\texorpdfstring{The Net-A-Porter Group, London --- Perl
+Developer
+\hfill \cvdate{November 2012 – May 2014}}{The Net-A-Porter Group, London --- Perl Developer }}\label{the-net-a-porter-group-london-perl-developer}
+
+\begin{itemize}
+\tightlist
+\item
+  Key part of effort to modernise legacy code-base with `modern' Perl
+  libraries and techniques
+\item
+  Collaborated with Devops teams to push older projects to adopt newer
+  build, test, and deploy tools as they became available
+\end{itemize}
+
+\subsubsection{\texorpdfstring{Webfusion Ltd, London --- Perl Developer
+/ Team Leader
+\hfill \cvdate{June 2011 – November 2012}}{Webfusion Ltd, London --- Perl Developer / Team Leader }}\label{webfusion-ltd-london-perl-developer-team-leader}
+
+\begin{itemize}
+\tightlist
+\item
+  Maintained and added new integrations with payment providers
+  (Worldpay, Paypal, Direct Debit)
+\item
+  Lead voice in project to normalise representations of services to
+  customers, as represented in architecture. This lead to making
+  considerable efficiencies in how repayments for these services were
+  calculated and processed
+\end{itemize}
+
+\subsubsection{\texorpdfstring{Intergage Ltd, Poole/Southampton --- Perl
+Developer
+\hfill \cvdate{January 2008 – June 2011}}{Intergage Ltd, Poole/Southampton --- Perl Developer }}\label{intergage-ltd-poolesouthampton-perl-developer}
+
+\begin{itemize}
+\tightlist
+\item
+  Improvements to internally developed CMS system, both front and back
+  end
+\item
+  Worked directly with customers with custom requirements in order to
+  create proposed technical project specifications
+\item
+  Part of team also responsible for systems administration and general
+  technical support
+\end{itemize}
+
+\subsection{Education}\label{education}
+
+\subsubsection{\texorpdfstring{University of Glamorgan, South Wales ---
+BSc Software Engineering, 2:1
+\hfill \cvdate{2004 – 2007}}{University of Glamorgan, South Wales --- BSc Software Engineering, 2:1 }}\label{university-of-glamorgan-south-wales-bsc-software-engineering-21}
+
+\subsubsection{Professional Development}\label{professional-development}
+
+\begin{itemize}
+\tightlist
+\item
+  Functional Programming Principles in Scala (Coursera)
+\item
+  Migrating to a Service Oriented Architecture
+\item
+  Core Scala (Underscore)
+\end{itemize}
+\end{document}
