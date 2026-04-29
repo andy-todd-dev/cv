@@ -85,6 +85,6 @@
     \small \href{$github$}{github.com/andy-todd-dev}$endif$
   \end{tabular}
 \end{tabularx}
-\vspace{8pt}
+\vspace{14pt}
 $endif$$body$
 \end{document}

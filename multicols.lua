@@ -50,6 +50,14 @@ function Div(el)
     }
   end
 
+  if el.classes:includes("summary") then
+    return {
+      pandoc.RawBlock("latex", "{\\setlength{\\parskip}{0pt}\\linespread{0.95}\\selectfont"),
+      pandoc.Div(el.content),
+      pandoc.RawBlock("latex", "}"),
+    }
+  end
+
   if el.classes:includes("skilltable") then
     local rows = {}
     local current_header = nil
@@ -80,19 +88,19 @@ function Div(el)
       end
     end
 
-    local tex = {
-      "\\begin{tabularx}{\\linewidth}{@{}p{2.8cm}>{"
-        .. "\\setlength{\\baselineskip}{16pt}\\setlength{\\lineskip}{3pt}\\raggedright\\arraybackslash"
-        .. "}X@{}}",
-    }
+    local tex = {}
     for i, row in ipairs(rows) do
+      -- row is "label & right_cell"; split on the first " & "
+      local label, right_cell = row:match("^(.-)%s&%s(.+)$")
+      tex[#tex + 1] = "\\noindent"
+        .. "\\begin{minipage}[c]{2.8cm}\\raggedright " .. label .. "\\end{minipage}%\n"
+        .. "\\begin{minipage}[c]{\\dimexpr\\linewidth-2.8cm\\relax}"
+        .. "\\setlength{\\baselineskip}{16pt}\\setlength{\\lineskip}{3pt}\\raggedright "
+        .. right_cell .. "\\end{minipage}\\par"
       if i < #rows then
-        tex[#tex + 1] = row .. " \\\\[4pt]"
-      else
-        tex[#tex + 1] = row .. " \\\\"
+        tex[#tex + 1] = "\\vspace{2pt}"
       end
     end
-    tex[#tex + 1] = "\\end{tabularx}"
 
     return pandoc.RawBlock("latex", table.concat(tex, "\n"))
   end

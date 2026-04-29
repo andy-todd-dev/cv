@@ -1,111 +1,96 @@
 ---
 name: Andrew Todd
-location: Brighton, East Sussex, United Kingdom
-phone: "+44770 953 9459"
+location: Brighton, UK
+phone: "+44 7709 539459"
 email: email.andy.todd@gmail.com
 linkedin: https://www.linkedin.com/in/andrew-todd-81a61766/
 github: https://github.com/andy-todd-dev
 ---
 
+::: {.summary}
+Senior backend engineer (Kotlin/Scala) with architectural and CTO-level experience, currently building AI-powered mobile products as an indie founder.
+:::
+
 ## Skills
 
 ::: {.skilltable}
 
-### Kotlin/Java
+### Languages
 
-Ktor · Kotest · Exposed · Axon · Gradle · Coroutines · Koin · Arrow
+Kotlin · Scala · TypeScript · Dart · Python
 
-### Scala
+### Backend
 
-Http4s · Cats · Cats Effect · Circe · Doobie · Akka · Akka-Streams · SBT · Specs2
+Ktor · Kotest · Exposed · Axon · Coroutines · Koin · Arrow · Gradle · Http4s · Cats · Cats Effect · Circe · Doobie · Akka · Akka-Streams · SBT · Specs2
 
-### Web
+### Frontend & Mobile
 
-TypeScript · React · Next.js · Vite · Tailwind CSS · PWA
+React · Next.js · Vite · Tailwind CSS · PWA · Flutter · Jetpack Compose · Riverpod · Drift · Patrol · Hilt · Cypress · Cucumber
 
-### Mobile
+### Cloud & Data
 
-Flutter · Dart · Riverpod · Drift · Patrol · Kotlin · Jetpack Compose · Hilt
+GCP · AWS · Firebase · Docker · Kubernetes · Terraform · AWS SAM · AWS Lambda · GitHub Actions · Dev Containers · Nginx · Grafana · Prometheus · Google Identity Platform · PostgreSQL · MongoDB · Redis · MQTT · Firestore · Google Pub/Sub
 
-### Tooling
+### Payments & Integrations
 
-Git · GitHub · GitHub Actions · Docker · Dev Containers · Kubernetes · Terraform · AWS SAM · Nginx · PostgreSQL · MongoDB · Redis · MQTT · Cypress · Cucumber · Grafana · Prometheus
+Stripe · PayPal · WorldPay · UPS · DHL · RevenueCat · eBay · Starling Bank
 
-### Platforms
+### LLM Integration
 
-GCP · AWS · Firebase
+Gemini API · Structured Outputs · Multi-modal Pipelines · Image Generation · Prompt Engineering
 
-### Integrations
+### Architecture & Engineering Practices
 
-Stripe · PayPal · WorldPay · UPS · DHL · RevenueCat · Gemini · eBay · Starling Bank
-
-### Methodologies
-
-Test Driven Development · Behaviour Driven Development · Domain Driven Design · Event Sourcing · CQRS · Hexagonal Architecture · Continuous Delivery / Integration · Microservices · Functional Programming · Pair Programming · Mob Programming · Agile (Scrum, Kanban)
-
-### AI Development
-
-GitHub Copilot · Copilot Agents
+Domain Driven Design · Event Sourcing · CQRS · Hexagonal Architecture · Microservices · Functional Programming · Test Driven Development · Behaviour Driven Development · Continuous Delivery/Integration · Agile (Scrum, Kanban)
 
 :::
 
 ## Experience
 
-### Recipe Raven — Founder & Developer \hfill \cvdate{2024 – Present}
+### Independent Developer — Self-Employed \hfill \cvdate{June 2022 – Present}
 
-- Sole founder and developer of a commercial cross-platform recipe app (Flutter/Android) with a dual-runtime Firebase backend — TypeScript Cloud Functions for AI/web pipelines, Python for NLP; currently in closed testing ahead of commercial launch via Google Play
-- Engineered a Gemini-powered recipe extraction pipeline handling URLs, Instagram HTML scraping (no official API), images, and OCR; parameterised prompt design with per-field type-safe response parsing to prevent LLM hallucination propagation
-- Implemented production-grade subscription credit metering: Firestore pessimistic locking to prevent race conditions across concurrent requests, idempotent RevenueCat deductions, and immediate UI feedback from backend responses
-- Local-first architecture using Drift (SQLite) with a versioned `importData`/`compileRecipe` schema split, enabling transparent re-parsing of all stored recipes when extraction logic improves; stepwise migrations including in-SQL data transformations
-- CI/CD pipeline with Workload Identity Federation (no stored credentials), automated build versioning via Firebase, and Android keystore injection from secrets
+*Current focus: Recipe Raven — AI-powered recipe app (Flutter/Android, Firebase)*
 
-### The Geek Tech Workshop — Founder & Developer \hfill \cvdate{February 2022 – Present}
+- Built a cross-platform recipe app (Flutter/Android) with a Firebase backend (TypeScript Cloud Functions, Python NLP), currently in closed beta
+- Developed an AI-powered recipe extraction pipeline supporting URLs, Instagram, and images
+- Integrated Gemini image generation to produce dish visuals from recipe content
+- Designed type-safe structured output parsing to ensure reliable, validated LLM responses
+- Implemented credit-based billing with Firestore pessimistic locking and idempotent RevenueCat integration to prevent duplicate charges
+- Built CI/CD using Workload Identity Federation, eliminating stored secrets from the release pipeline
 
-- Operated a commercial e-store (sole trader) selling repaired electronics and 3D-printed board game accessories
-- Built a serverless automated accounting pipeline using AWS SAM (Lambda, API Gateway, Google Sheets) that integrates with eBay and Starling Bank APIs
+*Previously: The Geek Tech Workshop — electronics repair and 3D printing accessories*
+
+- Built a serverless automated accounting pipeline using AWS SAM (Lambda, API Gateway, Google Sheets) integrating with eBay and Starling Bank APIs
 - Created `bambu-cli`, a Python CLI tool for managing print jobs across Bambu Lab 3D printers; published on PyPI and Docker Hub
 - Developed an Android app (Kotlin/Jetpack Compose) to scan and rewrite RFID tags on Bambu filament spools
+
+### Hozah Ltd, London — Software Engineer, Architect, Technical Lead, CTO \hfill \cvdate{March 2019 – February 2022}
+
+- Progressed from first engineering hire to CTO, building a dev team of four and overseeing a support function
+- Architected event-driven systems using Domain Driven Design, Event Sourcing, and CQRS across a Kotlin/Scala/GCP
+- Delivered Stripe-integrated payment flows within a smart parking and payments product
+- Oversaw scaling of the OCR-based automatic number plate recognition (ANPR) system and built the web UI parking ticket management solution from scratch
+- Migrated all GCP infrastructure from manual Console management to Terraform, integrated into the CD pipeline
+- Eliminated code review style debates by enforcing automated formatting at the editor level (IntelliJ Kotlin formatter, Prettier for TypeScript)
 
 ```{=latex}
 \newpage
 ```
 
-### Hozah Ltd, London — Software Engineer, Architect, Technical Lead, CTO \hfill \cvdate{March 2019 – February 2022}
-
-- Managing Dev and Support teams at Tech startup
-- Technical leadership for architecting, maintenance and development of existing and new software solutions within Hozah: a Smart Parking and Payment Solutions company
-- Solutions built using Kotlin, Scala and JavaScript (React). Infrastructure hosted primarily with Google Cloud Platform
-- Systems and architecture made heavy use of Domain Driven Design, event based communication, and event sourcing
-- Guided Dev team to more productive processes and tooling through discussion, feedback and presentation
-- Migrated team to Infrastructure As Code approach
-- Mentoring of junior developers with Pair and Mob programming and code review
-
 ### Dice Technology Ltd, London — Backend Developer \hfill \cvdate{September 2018 – March 2019}
 
-- Building very low latency microservices. Streaming data from sporting events to clients using akka-streams
-- Infrastructure / deployment flow built and maintained by the Dev team (in AWS)
+- Built high-throughput, low-latency microservices streaming live sporting event data to clients using Akka Streams on AWS
 
-### Yoox Net-A-Porter, London — Senior Developer \hfill \cvdate{May 2014 – September 2018}
+### Yoox Net-A-Porter (formerly The Net-A-Porter Group), London — Perl Developer → Senior Developer \hfill \cvdate{November 2012 – September 2018}
 
-- Lead voice in drive to migrate from Perl monolith to Scala implemented Service Oriented Architecture
-- Creation of Shipping-Option, Shipment-Booking and Document-Generation services, built to high traffic SLAs. Earlier services hosted in-house, later using AWS
-- Mentoring of graduate / junior developers through Pair Programming, code-review, and team discussion. Also presenting material to rest of company Scala community and / or running more practical workshops
-
-### The Net-A-Porter Group, London — Perl Developer \hfill \cvdate{November 2012 – May 2014}
-
-- Key part of effort to modernise legacy code-base with 'modern' Perl libraries and techniques
-- Collaborated with Devops teams to push older projects to adopt newer build, test, and deploy tools as they became available
+- Joined as a Perl developer; modernised the legacy codebase and collaborated with DevOps to improve build, test, and deploy tooling
+- Championed the migration from a Perl monolith to Scala microservices, leading adoption across the engineering team
+- Built Shipping-Option, Shipment-Booking and Document-Generation services serving global e-commerce traffic to demanding SLAs on AWS
+- Mentored junior and graduate developers through pair programming and code review; contributed to developer hiring; ran Scala workshops for the wider engineering community
 
 ### Webfusion Ltd, London — Perl Developer / Team Leader \hfill \cvdate{June 2011 – November 2012}
 
-- Maintained and added new integrations with payment providers (Worldpay, Paypal, Direct Debit)
-- Lead voice in project to normalise representations of services to customers, as represented in architecture. This lead to making considerable efficiencies in how repayments for these services were calculated and processed
-
-### Intergage Ltd, Poole/Southampton — Perl Developer \hfill \cvdate{January 2008 – June 2011}
-
-- Improvements to internally developed CMS system, both front and back end
-- Worked directly with customers with custom requirements in order to create proposed technical project specifications
-- Part of team also responsible for systems administration and general technical support
+- Integrated payment providers (WorldPay, PayPal, Direct Debit) and led a service normalisation initiative that significantly improved repayment processing efficiency
 
 ## Education
 
