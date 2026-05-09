@@ -24,9 +24,9 @@ local function inline_to_text(inlines)
 end
 
 local function make_tags(para_text)
-  -- Split on " · " and wrap each item in \cvtag{}
+  -- Split on commas and wrap each item in \cvtag{}
   local tags = {}
-  for item in (para_text .. " · "):gmatch("(.-)%s·%s") do
+  for item in (para_text .. ", "):gmatch("(.-)%s*,%s*") do
     item = item:match("^%s*(.-)%s*$") -- trim
     if item ~= "" then
       tags[#tags + 1] = "\\cvtag{" .. item .. "}"
@@ -36,8 +36,8 @@ local function make_tags(para_text)
 end
 
 local function make_plain(para_text)
-  -- Replace " · " with ", " for plain text rows
-  return para_text:gsub("%s·%s", ", ")
+  -- Normalize comma-separated plain text
+  return para_text:gsub("%s*,%s*", ", ")
 end
 
 function Div(el)

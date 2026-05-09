@@ -34,13 +34,13 @@ if [[ -n "${GDRIVE_ACCESS_TOKEN:-}" ]]; then
     # will be rejected by Google if expired — rclone will surface that error.
     TOKEN_JSON="{\"access_token\":\"${GDRIVE_ACCESS_TOKEN}\",\"token_type\":\"Bearer\",\"expiry\":\"2099-01-01T00:00:00Z\"}"
 
-    export RCLONE_CONFIG_REMOTE_TYPE="drive"
-    export RCLONE_DRIVE_SCOPE="drive.file"
-    export RCLONE_DRIVE_TOKEN="${TOKEN_JSON}"
-    export RCLONE_DRIVE_ROOT_FOLDER_ID="${GOOGLE_DRIVE_FOLDER_ID}"
+    export RCLONE_CONFIG_GDRIVE_TYPE="drive"
+    # export RCLONE_CONFIG_GDRIVE_SCOPE="drive.file"
+    # export RCLONE_CONFIG_GDRIVE_TOKEN="${TOKEN_JSON}"
+    # export RCLONE_CONFIG_GDRIVE_ROOT_FOLDER_ID="${GOOGLE_DRIVE_FOLDER_ID}"
 
     echo "Uploading ${PDF} to Google Drive folder ${GOOGLE_DRIVE_FOLDER_ID}..."
-    rclone copy "${PDF}" gdrive: --no-update-modtime
+    rclone copy "${PDF}" gdrive: --no-update-modtime --drive-scope "drive.file" --drive-token "${TOKEN_JSON}" --drive-root-folder-id "${GOOGLE_DRIVE_FOLDER_ID}"
 else
     # ── Local mode ─────────────────────────────────────────────────────────────
     echo "Local mode: using existing 'gdrive' rclone remote..."
@@ -52,7 +52,7 @@ else
     fi
 
     echo "Uploading ${PDF} to gdrive:..."
-    rclone copy "${PDF}" gdrive:CV --no-update-modtime
+    rclone copyTo "${PDF}" gdrive: --no-update-modtime
 fi
 
 echo "Upload complete."

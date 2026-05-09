@@ -1,9 +1,9 @@
 name: Build CV and Upload to Google Drive
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 permissions:
