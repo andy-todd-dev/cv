@@ -6,6 +6,69 @@
 -- H3s with class {.plain} get plain comma-separated text; others get \cvtag{} pills.
 -- Usage in markdown:  ::: {.skilltable}  ...  :::
 
+local extracted_contact = {}
+
+local function trim(value)
+  return (value or ""):match("^%s*(.-)%s*$")
+end
+
+local function normalize_url_label(url)
+  local label = trim(url)
+  if label == "" then
+    return ""
+  end
+  label = label:gsub("^%a+://", "")
+  label = label:gsub("^www%.", "")
+  label = label:gsub("[?#].*$", "")
+  label = label:gsub("/$", "")
+  return label
+end
+
+local function meta_to_text(value)
+  if not value then
+    return ""
+  end
+  return trim(pandoc.utils.stringify(value))
+end
+
+local function parse_contact_line(line)
+  local key, value = line:match("^%s*([^:]+):%s*(.-)%s*$")
+  if not key or not value or value == "" then
+    return
+  end
+
+  local normalized_key = key:lower():gsub("[^a-z]", "")
+  local mapped_keys = {
+    name = "name",
+    location = "location",
+    phone = "phone",
+    email = "email",
+    linkedin = "linkedin",
+    github = "github",
+  }
+
+  local target_key = mapped_keys[normalized_key]
+  if target_key then
+    extracted_contact[target_key] = trim(value)
+  end
+end
+
+local function parse_contact_block(content)
+  for _, block in ipairs(content) do
+    if block.t == "Para" or block.t == "Plain" then
+      parse_contact_line(pandoc.utils.stringify(block))
+    elseif block.t == "BulletList" then
+      for _, item in ipairs(block.content) do
+        for _, item_block in ipairs(item) do
+          if item_block.t == "Para" or item_block.t == "Plain" then
+            parse_contact_line(pandoc.utils.stringify(item_block))
+          end
+        end
+      end
+    end
+  end
+end
+
 local function inline_to_text(inlines)
   local result = {}
   for _, inline in ipairs(inlines) do
@@ -41,6 +104,12 @@ local function make_plain(para_text)
 end
 
 function Div(el)
+  if el.classes:includes("contact") then
+    parse_contact_block(el.content)
+    -- Keep contact data visible in markdown source but omit duplicated body output in PDF.
+    return {}
+  end
+
   if el.classes:includes("multicols") then
     local cols = el.attributes["cols"] or "2"
     return {
@@ -104,4 +173,24 @@ function Div(el)
 
     return pandoc.RawBlock("latex", table.concat(tex, "\n"))
   end
+end
+
+function Pandoc(doc)
+  for key, value in pairs(extracted_contact) do
+    if value ~= "" then
+      doc.meta[key] = pandoc.MetaString(value)
+    end
+  end
+
+  local linkedin_url = meta_to_text(doc.meta.linkedin)
+  local github_url = meta_to_text(doc.meta.github)
+
+  if linkedin_url ~= "" then
+    doc.meta.linkedin_label = pandoc.MetaString(normalize_url_label(linkedin_url))
+  end
+  if github_url ~= "" then
+    doc.meta.github_label = pandoc.MetaString(normalize_url_label(github_url))
+  end
+
+  return doc
 end

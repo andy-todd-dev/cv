@@ -81,8 +81,8 @@
     \small $location$ \\[2pt]
     \small $phone$ \\[2pt]
     \small \href{mailto:$email$}{$email$}$if(linkedin)$ \\[2pt]
-    \small \href{$linkedin$}{linkedin.com/in/andrew-todd-81a61766}$endif$$if(github)$ \\[2pt]
-    \small \href{$github$}{github.com/andy-todd-dev}$endif$
+    \small \href{$linkedin$}{$if(linkedin_label)$$linkedin_label$$else$$linkedin$$endif$}$endif$$if(github)$ \\[2pt]
+    \small \href{$github$}{$if(github_label)$$github_label$$else$$github$$endif$}$endif$
   \end{tabular}
 \end{tabularx}
 \vspace{14pt}

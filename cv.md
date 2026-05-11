@@ -1,11 +1,11 @@
----
-name: Andrew Todd
-location: Brighton, UK
-phone: "+44 7709 539459"
-email: andy.todd.dev@gmail.com
-linkedin: https://www.linkedin.com/in/andrew-todd-81a61766/
-github: https://github.com/andy-todd-dev
----
+::: {.contact}
+- Name: Andrew Todd
+- Location: Brighton, UK
+- Phone: +44 7709 539459
+- Email: andy.todd.dev@gmail.com
+- LinkedIn: https://www.linkedin.com/in/andy-todd-dev
+- GitHub: https://github.com/andy-todd-dev
+:::
 
 ::: {.summary}
 Senior backend engineer (Kotlin/Scala) with architectural and leadership experience, currently building AI-powered mobile products as an independent developer.
